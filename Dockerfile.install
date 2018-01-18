@@ -1,0 +1,12 @@
+FROM python:2.7-slim
+
+RUN pip install -U pip && \
+    pip install -U wheel
+
+COPY requirements.txt .
+
+CMD pip install \
+    --no-index \
+    --trusted-host wheelhouse \
+    --find-links=http://wheelhouse/ \
+    -vvv -r requirements.txt
