@@ -1,7 +1,7 @@
 FROM python:2.7-slim
 
 RUN apt-get update && \
-    apt-get install -y -q python-pip python-dev build-essential nginx curl
+    apt-get install -y -q python-pip python-dev build-essential nginx curl tree
 
 RUN pip install -U pip && \
     pip install -U wheel
@@ -10,6 +10,10 @@ COPY requirements.txt .
 RUN pip wheel \
     --wheel-dir=/var/www/html \
     -r requirements.txt
+
+# This could have been done in Nginx as well with `autoindex on`. However, by doing
+# it this way, we can serve it from Google Cloud Storage and S3 as well.
+RUN cd /var/www/html && tree -H '.' -L 1 --noreport --charset utf-8 -P "*.whl" > index.html
 
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
