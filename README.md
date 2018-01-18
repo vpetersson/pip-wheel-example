@@ -52,16 +52,15 @@ Run the wheelhouse server...
 
 Verify that we can access one of the wheels...
 
-HTTP/1.1 200 OK
-Server: nginx/1.6.2
-Date: Thu, 18 Jan 2018 13:55:38 GMT
-Content-Type: application/octet-stream
-Content-Length: 5908
-Last-Modified: Thu, 18 Jan 2018 13:49:41 GMT
-Connection: keep-alive
-ETag: "5a60a5f5-1714"
-Accept-Ranges: bytes
-
+HTTP/1.1 200 OK
+Server: nginx/1.6.2
+Date: Thu, 18 Jan 2018 13:55:38 GMT
+Content-Type: application/octet-stream
+Content-Length: 5908
+Last-Modified: Thu, 18 Jan 2018 13:49:41 GMT
+Connection: keep-alive
+ETag: "5a60a5f5-1714"
+Accept-Ranges: bytes
 
 Now let's try installing using the wheel...
 
