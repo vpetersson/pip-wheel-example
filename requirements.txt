@@ -3,5 +3,5 @@ pyzmq==17.0.0b1
 raven==6.0.0
 requests==2.7.0
 stripe==1.75.3
-urllib3==1.24.2
+urllib3==1.26.5
 zencoder==0.6.5
